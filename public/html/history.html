@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOT Sensor</title>
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- favicon logo -->
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <!-- reset -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <!-- style -->
+    <link rel="stylesheet" href="../css/style3_data_sensor.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <div class="main__content">
+          <section class="menu">
+            <div class="menu__content">
+              <div class="logo">
+                <a href="/dashboard">
+                  <img src="../img/favicon.png" alt="logo" />
+                </a>
+                <a href="/dashboard"><span>Sensor System</span></a>
+              </div>
+              <div class="nav-bar">
+                <ul>
+                  <li>
+                    <a href="/dashboard"
+                      ><i class="fa-solid fa-house"></i
+                    ></a>
+                    <a href="/dashboard">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="/data_sensor"
+                      ><i class="fa-solid fa-database"></i
+                    ></a>
+                    <a href="/data_sensor">Data Sensor</a>
+                  </li>
+                  <li>
+                    <a href="/history">
+                      <i class="fa-solid fa-clock-rotate-left"></i
+                    ></a>
+                    <a href="/history">History</a>
+                  </li>
+                  <li>
+                    <a href="/profile"
+                      ><i class="fa-solid fa-user"></i
+                    ></a>
+                    <a href="/profile">Profile</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <!-- <section class="table__content">
+            <section class="table__header">
+              <div class="header__left">
+                <h1>Action History</h1>
+                <div class="items__controller">
+                  <h5>Show</h5>
+                  <select name="itemperpage" id="itemperpage">
+                    <option value="05">05</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                  </select>
+                  <h5>per page</h5>
+                </div>
+              </div>
+              <div class="time-filter">
+                <div class="time__start">
+                  <label for="startTime">Start Time:</label>
+                  <input
+                    type="datetime-local"
+                    id="startTime"
+                    name="startTime"
+                  />
+                </div>
+                <div class="time__end">
+                  <label for="endTime">End Time:</label>
+                  <input type="datetime-local" id="endTime" name="endTime" />
+                </div>
+              </div>
+              <div class="input-group">
+                <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  placeholder="Search data by..."
+                />
+                <select name="searchBy" id="searchBy">
+                  <option value="id">ID</option>
+                  <option value="device">Device</option>
+                  <option value="action">Action</option>
+                  <option value="time">Time</option>
+                </select>
+                <span class="material-symbols-outlined search"> search </span>
+              </div>
+            </section>
+            <section class="table__body">
+              <table style="table-layout: fixed; width: 100%" class="table">
+                <colgroup>
+                  <col style="width: 10%" />
+                  <col style="width: 30%" />
+                  <col style="width: 30%" />
+                  <col style="width: 30%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th data-column="0">
+                      <div class="th__control" onclick="handleSort(0)">
+                        <span>ID </span
+                        ><span class="icon-arrow">&DownArrow;</span>
+                      </div>
+                    </th>
+                    <th data-column="1">
+                      <div class="th__control" onclick="handleSort(1)">
+                        <span>Device</span>
+                        <span class="icon-arrow">&DownArrow;</span>
+                      </div>
+                    </th>
+                    <th data-column="2">
+                      <div class="th__control" onclick="handleSort(2)">
+                        <span>Action</span>
+                        <span class="icon-arrow">&DownArrow;</span>
+                      </div>
+                    </th>
+                    <th data-column="3">
+                      <div class="th__control" onclick="handleSort(3)">
+                        <span>Time</span>
+                        <span class="icon-arrow">&DownArrow;</span>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="data-output"></tbody>
+              </table>
+            </section>
+            <div class="bottom__field">
+              <div class="row-info">
+                <p id="row-info">Showing X of Y rows</p>
+              </div>
+              <div class="row-pagination">
+                <ul class="pagination">
+                  <li class="first"><a href="#" id="first">First</a></li>
+                  <li class="prev"><a href="#" id="prev">&#139;</a></li>
+                  <li class="next"><a href="#" id="next">&#155;</a></li>
+                  <li class="last"><a href="#" id="last">Last</a></li>
+                </ul>
+              </div>
+            </div>
+          </section> -->
+          <section class="table__content">
+            <section class="table__header">
+              <div class="header__left">
+                <h1>Action history</h1>
+                <!-- pagination - header -->
+                <div class="items__controller">
+                  <h5>Show</h5>
+                  <select name="itemperpage" id="itemperpage">
+                    <option value="05">05</option>
+                    <option value="10" selected>10</option>
+                    <option value="15">15</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <!-- <option value="70">70</option> -->
+                  </select>
+                  <h5>per page</h5>
+                </div>
+              </div>
+              <div class="input-group">
+                <input
+                  type="text"
+                  name="search"
+                  id="search"
+                  placeholder="Search data by..."
+                />
+                <select name="searchBy" id="searchBy">
+                  <option value="id">ID</option>
+                  <option value="device">Device</option>
+                  <option value="action">Action</option>
+                  <option value="time">Time</option>
+                </select>
+                <span class="material-symbols-outlined search"> search </span>
+              </div>
+            </section>
+            <section class="table__body">
+              <table style="table-layout: fixed; width: 100%" class="table">
+                <colgroup>
+                  <col style="width: 10%" />
+                  <col style="width: 30%" />
+                  <col style="width: 30%" />
+                  <col style="width: 30%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th data-column="0" class="sensor-col" id="col-id" value="id">
+                      <div class="th__control">
+                        <span>ID </span>
+                        <span class="icon-arrow"></span>
+                      </div>
+                    </th>
+                    <th data-column="1" class="sensor-col" id="col-device" value="device">
+                      <div class="th__control">
+                        <span>Device</span>
+                        <span class="icon-arrow"></span>
+                      </div>
+                    </th>
+                    <th data-column="2" class="sensor-col" id="col-action" value="action">
+                      <div class="th__control">
+                        <span>Action</span>
+                        <span class="icon-arrow"></span>
+                      </div>
+                    </th>
+                    <th data-column="3" class="sensor-col" id="col-time" value="time">
+                      <div class="th__control">
+                        <span>Time</span>
+                        <span class="icon-arrow">&DownArrow;</span>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody id="data-output"></tbody>
+              </table>
+            </section>
+            <!-- pagination - bottom -->
+            <div class="bottom__field">
+              <div class="row-info">
+                <p id="row-info">Showing X of Y rows</p>
+              </div>
+              <div class="row-pagination">
+                <ul class="pagination">
+                  <li class="first"><a href="#" id="first">First</a></li>
+                  <li class="prev"><a href="#" id="prev">&#139;</a></li>
+                  <!-- <li class="list-pages"></li> -->
+                  <li class="next"><a href="#" id="next">&#155;</a></li>
+                  <li class="last"><a href="#" id="last">Last</a></li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!-- get json data and query -->
+    <!-- <script src="../js/data_history.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/test2.js"></script>
+    <!-- <script src="../js/query.js"></script> -->
+  </body>
+</html>

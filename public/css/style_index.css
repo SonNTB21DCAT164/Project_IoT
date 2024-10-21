@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Sora", sans-serif;
+    height: 100vh;
+    padding: 1rem;
+    background: linear-gradient(-45deg, #0779a6, #022437, #0074D9, #04668d, #0779a6, #7FDBFF);
+}
+
+/* =============== common ==================== */
+.container {
+    width: 144rem;
+    max-width: calc(100% - 2.4rem);
+    margin: 0 auto;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+/* =============== header ==================== */
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__content .logo img {
+    width: 60px;
+    height: 40px;
+    border-radius: 1rem;
+}
+
+.nav-bar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3.5rem;
+}
+
+.header__content .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.header__content .logo span {
+    font-size: 1.5rem;
+    color: #022437;
+}
+
+.nav-bar a {
+    color: #022437;
+    transition: .3s;
+    font-size: 2rem;
+}
+
+.nav-bar a:hover {
+    scale: 1.1;
+    text-decoration: underline;
+    color: #fff;
+}
+
+main {
+    padding-top: 5rem;
+}
+
+.main__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 7rem;
+    color: beige;
+}
+
+.main__content img {
+    width: 100%;
+    height: 550px;
+    border-radius: 50px;
+}

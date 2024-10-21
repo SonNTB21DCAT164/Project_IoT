@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Sora", sans-serif;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.header .logo img {
+    width: 60px;
+    height: 40px;
+    border-radius: 1rem;
+}
+
+.header .logo span {
+    font-size: 1.5rem;
+    color: #022437;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    column-gap: 8rem;
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: #00abf0;
+    text-decoration: underline;
+    scale: 1.05;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.home {
+    height: 100vh;
+    background: linear-gradient(-90deg, #031540 65%, #fff 35%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background-color: #031540;
+    border-radius: 50%;
+    border: 20px solid #fff;
+    outline: 10px solid #031540;
+
+}
+
+.home__image img {
+    border-radius: 50%;
+    max-width: 420px;
+}
+
+.home__content {
+    max-width: 600px;
+    color: #fff;
+    text-align: right;
+}
+
+.home__content h1 {
+    font-size: 5.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.home__content h3 {
+    font-size: 4rem;
+    color: transparent;
+    background-image: linear-gradient(#00abf0, #00abf0);
+    background-repeat: no-repeat;
+    -webkit-text-stroke: .5px #fff;
+    -webkit-background-clip: text;
+    background-position: -525px -230px;
+    animation: animationText 6s linear infinite;
+    text-align: left;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+@keyframes animationText {
+
+    0%,
+    95%,
+    100% {
+        background-position: -525px 0;
+    }
+
+    65%,
+    85% {
+        background-position: -230px 0;
+    }
+}
+
+.home__content ul li,
+.home__content ul li a {
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: 1rem;
+}
+
+.home__content ul li a span {
+    transition: .3s;
+}
+
+.home__content ul li a span:hover {
+    color: #00abf0;
+    text-decoration: underline;
+    scale: 1.05;
+}
+
+.postman-img {
+    width: 2rem;
+}
+
+.home__social {
+    margin: 3rem 0 4rem;
+    text-align: center;
+}
+
+.home__social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    margin-left: 1.2rem;
+    transition: .3s;
+}
+
+.home__social a:hover {
+    background: #00abf0;
+    color: #fff;
+    border-color: #00abf0;
+    box-shadow: 0 0 10px #00abf0;
+}
